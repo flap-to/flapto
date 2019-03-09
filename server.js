@@ -8,12 +8,15 @@ const http = require('http')
 http.createServer((req, resp) => {
   let headers = req.headers
   let host = req.headers.host
+  if (!host) return resp.end('no hostname configured')
 
   dns.resolveTxt(host, (err, records) => {
-    console.log(err, records)
     if (err) return resp.end('error')
     if (!records || !records.length) return resp.end('error, no records')
-    let latlon = records[0]
+    let _latlon = records[0]
+    if (!_latlon && !latlon.length ) return resp.end('error, not structure')
+    let latlon = _latlon[0]
+
     if (!latlon) return resp.end('no latlon')
     let [lat,lon] = latlon.split(',')
     if (!lat || !lon) return resp.end('invalid')
@@ -24,4 +27,4 @@ http.createServer((req, resp) => {
   })
 
 
-}).listen(9615)
+}).listen(80)
