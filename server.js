@@ -18,7 +18,7 @@ http.createServer((req, resp) => {
     if (!records || !records.length) return resp.end('error, no records')
     let details = parser(records)
     if (!details.l) return resp.end('no latlon')
-    if (details.l.length !== 2) return resp.end('invalid')
+    if (!details.lat || !details.lon) return resp.end('invalid')
     resp.writeHead(302, { 'Location': compiled(details) })
     resp.end()
   })

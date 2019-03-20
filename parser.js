@@ -8,6 +8,8 @@ module.exports = (record) => {
     details[parts[0]] = parts[1]
   })
   if (!details.l) return // no lat/lon
-  details.l = details.l.split(',')
+  let [lat, lon] = details.l.split(',')
+  details.lat = lat
+  details.lon = lon
   return details
 }
