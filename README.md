@@ -24,7 +24,7 @@ Lets say you wanted the following to resolve
 Create a txt record in dns for biz1.address.company.com that looks like
 
 ```
-{"l":[36.1251958,-115.3150852]}
+"l=36.1251958,-115.3150852"
 ```
 
 Then create an A record in dns with the entry 22.22.22.22
@@ -32,7 +32,7 @@ Then create an A record in dns with the entry 22.22.22.22
 Create a txt record in dns for biz2.address.company.com that looks like
 
 ```
-{"l":[32.6743104,-117.1161124]}
+"l=32.6743104,-117.1161124"
 ```
 
 Then create an A record in dns with the entry 22.22.22.22

@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "lodash.template": "^4.4.0",
-    "rc": "^1.2.8",
-    "turbo-json-parse": "^2.3.0"
+    "rc": "^1.2.8"
   }
 }
