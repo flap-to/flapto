@@ -1,15 +1,23 @@
 {
   "name": "flapto",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "FlapTo lets you name places in the world using the dns system",
   "bin": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ryan Ramage",
   "license": "ISC",
   "dependencies": {
     "lodash.template": "^4.4.0",
     "rc": "^1.2.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flap-to/flapto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flap-to/flapto"
+  },
+  "homepage": "https://github.com/flap-to/flapto#readme"
 }
