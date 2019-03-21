@@ -12,11 +12,13 @@ http.createServer((req, resp) => {
   let headers = req.headers
   let host = req.headers.host
   if (!host) return resp.end('no hostname configured')
+  console.log('host:', host)
 
   dns.resolveTxt(host, (err, records) => {
     if (err) return resp.end('error')
     if (!records || !records.length) return resp.end('error, no records')
     let details = parser(records)
+    if (!details) return resp.end('not configured correctly')
     if (!details.l) return resp.end('no latlon')
     if (!details.lat || !details.lon) return resp.end('invalid')
     resp.writeHead(302, { 'Location': compiled(details) })
